@@ -6,9 +6,10 @@
   "author": "takepepe",
   "license": "MIT",
   "scripts": {
-    "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "format": "eslint --fix './src/**/*.{js,ts,tsx}' && prettier --write './src/**/*.{js,ts,tsx}'",
+    "lint": "biome lint -- apply ./src",
+    "format": "biome format ./src --write",
+    "check:biome": "biome check --apply ./src",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
@@ -22,6 +23,7 @@
     "react-dropzone": "^14.2.3"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.7.0",
     "@storybook/addon-essentials": "^7.2.1",
     "@storybook/addon-interactions": "^7.2.1",
     "@storybook/addon-links": "^7.2.1",
@@ -33,13 +35,6 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "@typescript-eslint/eslint-plugin": "^6.9.0",
-    "@typescript-eslint/parser": "^6.9.0",
-    "eslint": "^8",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-storybook": "^0.6.13",
-    "eslint-plugin-unused-imports": "^3.0.0",
-    "prettier": "^3.0.0",
     "storybook": "^7.2.1",
     "typescript": "^5.2.2"
   }
